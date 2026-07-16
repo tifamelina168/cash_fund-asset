@@ -19,15 +19,12 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:radial-gradient(1200px 600px at 50% -10%,#16243f 0%,var(--bg) 55%);
+    background:radial-gradient(1400px 700px at 50% -10%,#16243f 0%,var(--bg) 55%);
     color:var(--ink);
     line-height:1.6;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    padding:28px 20px 60px;
+    padding:32px 20px 70px;
   }
-  .wrap{width:100%;max-width:560px}
+  .wrap{width:100%;max-width:960px;margin:0 auto}
 
   .kicker{
     display:inline-block;
@@ -41,49 +38,65 @@
     margin-bottom:22px;
   }
 
-  h1{font-size:28px;line-height:1.3;font-weight:700;margin-bottom:14px;letter-spacing:-.01em}
+  h1{font-size:30px;line-height:1.3;font-weight:700;margin-bottom:14px;letter-spacing:-.01em;max-width:720px}
   h1 .hl{color:var(--gold-soft)}
-  .lede{color:var(--muted);font-size:15.5px;margin-bottom:26px}
+  .lede{color:var(--muted);font-size:16px;margin-bottom:34px;max-width:640px}
 
-  h2{font-size:17px;margin:30px 0 12px;color:var(--gold-soft)}
+  h2{font-size:19px;margin:44px 0 16px;color:var(--gold-soft)}
 
-  .cards{display:grid;gap:12px}
+  /* value strip */
+  .vstrip{display:grid;gap:14px;grid-template-columns:1fr;margin-bottom:8px}
+  .vitem{
+    background:linear-gradient(160deg,rgba(217,164,65,.1),rgba(217,164,65,.02));
+    border:1px solid rgba(217,164,65,.28);
+    border-radius:16px;
+    padding:20px;
+  }
+  .vitem .vbig{
+    font-size:20px;font-weight:700;line-height:1.25;
+    color:var(--gold-soft);letter-spacing:-.01em;
+    margin-bottom:9px;
+  }
+  .vitem p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.6}
+
+  /* cards */
+  .cards{display:grid;gap:14px;grid-template-columns:1fr}
   .card{
     background:var(--panel);
     border:1px solid var(--line);
     border-radius:16px;
-    padding:16px 18px;
+    padding:18px 20px;
     display:flex;gap:14px;align-items:flex-start;
   }
   .ic{
-    flex:none;width:40px;height:40px;border-radius:11px;
+    flex:none;width:42px;height:42px;border-radius:11px;
     display:flex;align-items:center;justify-content:center;font-size:20px;
     background:rgba(217,164,65,.12);
     border:1px solid rgba(217,164,65,.25);
   }
-  .card h3{font-size:15px;margin-bottom:3px}
+  .card h3{font-size:15px;margin-bottom:4px}
   .card p{font-size:13.5px;color:var(--muted);margin:0}
 
-  /* ilustrasi */
+  /* dua kolom: ilustrasi + cocok untuk siapa */
+  .two-col{display:grid;gap:24px;grid-template-columns:1fr}
+
   .illu{
     background:linear-gradient(135deg,rgba(217,164,65,.12),rgba(217,164,65,.04));
     border:1px solid rgba(217,164,65,.3);
     border-radius:16px;
-    padding:20px;
-    margin-top:6px;
+    padding:22px;
   }
   .illu .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
   table{width:100%;border-collapse:collapse;font-size:13.5px}
-  td{padding:8px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+  td,th{padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
   td:last-child{text-align:right;font-weight:600}
   tr:last-child td{border-bottom:none}
   .big-row td{color:var(--gold-soft);font-size:15px}
   .disc{font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.5}
 
-  .who{margin-top:6px}
+  .who{list-style:none}
   .who li{
-    list-style:none;
-    padding:9px 0 9px 26px;
+    padding:10px 0 10px 26px;
     position:relative;
     font-size:14.5px;
     color:var(--muted);
@@ -92,7 +105,97 @@
   .who li:last-child{border-bottom:none}
   .who li::before{content:"✓";position:absolute;left:2px;color:var(--green);font-weight:700}
 
-  .cta{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+  /* perbandingan */
+  .compare-table{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:8px 18px 14px;
+    overflow-x:auto;
+  }
+  .compare-table th{color:var(--gold-soft);font-size:13px;padding-top:14px}
+  .compare-table td{text-align:left;font-weight:400;color:var(--muted)}
+  .compare-table td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+
+  /* proses */
+  .steps{display:grid;gap:14px;grid-template-columns:1fr}
+  .stepc{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:18px 20px;
+  }
+  .stepc .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:999px;
+    background:rgba(217,164,65,.15);color:var(--gold-soft);
+    font-weight:700;font-size:14px;margin-bottom:10px;
+    border:1px solid rgba(217,164,65,.3);
+  }
+  .stepc h3{font-size:15px;margin-bottom:4px}
+  .stepc p{font-size:13.5px;color:var(--muted)}
+
+  /* FAQ */
+  details{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    margin-bottom:11px;
+    overflow:hidden;
+  }
+  summary{
+    cursor:pointer;
+    padding:16px 18px;
+    font-size:15px;
+    font-weight:600;
+    list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:400;flex:none}
+  details[open] summary::after{content:"−"}
+  details[open]{border-color:rgba(217,164,65,.35)}
+  .faq-body{padding:0 18px 16px;font-size:14px;color:var(--muted)}
+
+  /* flowchart */
+  .flow{display:flex;flex-direction:column;gap:0;margin:6px 0 4px}
+  .fstage{display:flex;gap:14px;align-items:flex-start}
+  .fnode{
+    flex:none;width:38px;height:38px;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:15px;
+    background:var(--panel2);color:var(--gold-soft);
+    border:2px solid rgba(217,164,65,.45);
+    box-shadow:0 0 0 4px rgba(217,164,65,.08);
+  }
+  .fnode.gold{
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    color:#1a1206;border-color:transparent;
+  }
+  .fcard{
+    flex:1;background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;
+  }
+  .fcard.win{
+    border-color:rgba(30,190,122,.4);
+    background:linear-gradient(135deg,rgba(30,190,122,.1),rgba(30,190,122,.02));
+  }
+  .fcard h4{font-size:14.5px;margin-bottom:3px}
+  .fcard p{font-size:13px;color:var(--muted);margin:0;line-height:1.55}
+  .ftag{
+    display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold);background:rgba(217,164,65,.1);
+    border:1px solid rgba(217,164,65,.25);
+    padding:2px 9px;border-radius:999px;margin-bottom:7px;
+  }
+  .farrow{
+    color:var(--gold);font-size:17px;line-height:1;
+    padding:7px 0 7px 12px;
+  }
+
+  /* CTA */
+  .cta{display:flex;flex-direction:column;gap:12px;margin-top:40px;max-width:520px;margin-left:auto;margin-right:auto}
   .btn{
     display:flex;align-items:center;justify-content:center;gap:9px;
     text-decoration:none;font-weight:600;font-size:16px;
@@ -103,8 +206,17 @@
   .btn-wa{background:var(--green);color:#fff}
   .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:14px;padding:13px}
 
-  .sign{text-align:center;margin-top:28px;color:var(--muted);font-size:13px}
+  .sign{text-align:center;margin-top:30px;color:var(--muted);font-size:13px}
   .sign b{color:var(--ink)}
+
+  /* desktop */
+  @media(min-width:720px){
+    h1{font-size:38px}
+    .vstrip{grid-template-columns:1fr 1fr 1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .two-col{grid-template-columns:1.15fr 1fr;align-items:start}
+    .steps{grid-template-columns:1fr 1fr 1fr}
+  }
 </style>
 </head>
 <body>
@@ -121,6 +233,21 @@
     instrumen kontraktual bernilai tunai. Tercatat, terukur, dan bisa memperkuat
     profil finansial Anda saat berhadapan dengan lembaga pendanaan.
   </p>
+
+  <div class="vstrip">
+    <div class="vitem">
+      <div class="vbig">Aktif penuh<br>sejak awal</div>
+      <p>Nabung & investasi harus terkumpul dulu baru bernilai. Kontrak ini terbalik: nilai penuhnya berlaku sejak setoran pertama.</p>
+    </div>
+    <div class="vitem">
+      <div class="vbig">1 aset,<br>3 fungsi</div>
+      <p>Memperkuat profil di mata lembaga, bisa jadi agunan tambahan, dan jadi sumber likuiditas — dari satu kali pembentukan.</p>
+    </div>
+    <div class="vitem">
+      <div class="vbig">Cair saat aset lain<br>harus dijual</div>
+      <p>Saat pemiliknya berhenti produktif, properti & saham justru dilepas murah. Aset ini kebalikannya: mengalirkan dana masuk.</p>
+    </div>
+  </div>
 
   <h2>Kenapa kelas aset ini menarik</h2>
   <div class="cards">
@@ -154,42 +281,288 @@
     </div>
   </div>
 
-  <h2>Contoh ilustrasi (angka bisa disesuaikan)</h2>
-  <div class="illu">
-    <div class="label">Profil: Pengusaha, 40 th</div>
+  <h2>Posisinya di antara paper asset lain</h2>
+  <div class="compare-table">
     <table>
-      <tr><td>Setoran terjadwal</td><td>Rp 5 jt / bulan</td></tr>
-      <tr><td>Masa setor</td><td>5 tahun (total Rp 300 jt)</td></tr>
-      <tr><td>Nilai tunai terbentuk</td><td>bertahap sejak tahun pertama</td></tr>
-      <tr class="big-row"><td>Nilai kontrak aktif</td><td>hingga Rp 1 M+</td></tr>
-      <tr><td>Dana cair saat risiko besar<br>(sakit kritis / tutup usia)</td><td>100% nilai kontrak</td></tr>
+      <tr>
+        <th>Instrumen</th>
+        <th>Peran utama</th>
+        <th>Karakter</th>
+      </tr>
+      <tr>
+        <td>Obligasi / SBN</td>
+        <td>Imbal hasil berkala</td>
+        <td>Butuh dana besar di depan; nilai mengikuti pasar & tenor</td>
+      </tr>
+      <tr>
+        <td>Deposito</td>
+        <td>Parkir dana aman</td>
+        <td>Likuid, tapi nilai berhenti saat dana ditarik</td>
+      </tr>
+      <tr>
+        <td>Instrumen kontraktual bernilai tunai</td>
+        <td>Struktur aset + perlindungan arus kas</td>
+        <td>Dibangun bertahap lewat setoran terjadwal; nilai kontrak aktif penuh sejak awal</td>
+      </tr>
     </table>
+    <p class="disc">Masing-masing punya peran berbeda — ini bukan pengganti, melainkan pelengkap struktur aset. Portofolio yang rapi biasanya memuat lebih dari satu kelas.</p>
+  </div>
+
+  <h2>Contoh ilustrasi</h2>
+  <div class="two-col">
+    <div class="illu">
+      <div class="label">Profil: Pengusaha, 40 th</div>
+      <table>
+        <tr><td>Setoran terjadwal</td><td>Rp 5 jt / bulan</td></tr>
+        <tr><td>Masa setor</td><td>5 tahun (total Rp 300 jt)</td></tr>
+        <tr><td>Nilai tunai terbentuk</td><td>bertahap sejak tahun pertama</td></tr>
+        <tr class="big-row"><td>Nilai kontrak aktif</td><td>hingga Rp 1 M+</td></tr>
+        <tr><td>Dana cair saat risiko besar<br>(sakit kritis / tutup usia)</td><td>100% nilai kontrak</td></tr>
+      </table>
+      <p class="disc">
+        *Ilustrasi umum, bukan penawaran resmi maupun jaminan hasil. Angka aktual mengikuti
+        profil usia, skema, dan ilustrasi resmi dari penerbit instrumen. Detail lengkap dibahas saat konsultasi.
+      </p>
+    </div>
+    <div>
+      <div class="illu" style="background:var(--panel);border-color:var(--line)">
+        <div class="label" style="color:var(--gold-soft)">Cocok untuk siapa</div>
+        <ul class="who">
+          <li>Pengusaha yang ingin diversifikasi di luar properti & bisnis inti</li>
+          <li>Broker / rekan yang punya klien butuh struktur aset lebih rapi</li>
+          <li>Pemilik usaha yang sedang / akan mengajukan pendanaan</li>
+          <li>Yang ingin likuiditas cadangan tanpa mengganggu modal kerja</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>7 model umum: bangun paper asset + pendanaan project</h2>
+  <p class="lede" style="margin-bottom:18px">
+    Semua model di bawah ini sah dan lazim dipakai. Bedanya di sumber dana premi,
+    posisi agunan, dan seberapa berat bebannya di individu. Urut dari yang paling ringan.
+    <b style="color:var(--ink)">Anda tidak perlu paham semuanya — memetakan mana yang pas itu tugas saya.</b>
+    Dari sisi Anda, yang berjalan cuma dua hal: satu diskusi, lalu setoran terjadwal.
+  </p>
+
+  <details>
+    <summary>1 · Cash flow terpisah (baseline)</summary>
+    <div class="faq-body">
+      Premi dibayar dari arus kas pribadi/usaha; kredit project diajukan terpisah dengan agunan fisik.
+      Paling sederhana dan paling murah — tidak ada biaya bunga di sisi premi. Syaratnya: kas kuat.
+      <b style="color:var(--gold-soft)">Beban individu: rendah.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>2 · Kredit multiguna / equity release</summary>
+    <div class="faq-body">
+      Properti diagunkan → kredit multiguna cair → dana bebas digunakan, termasuk membentuk paper asset.
+      Sah selama akad kreditnya memang multiguna. Konsekuensinya: premi punya "harga bunga",
+      jadi masuk akal hanya kalau paper asset itu membuka nilai lebih besar — misalnya akses pendanaan lanjutan.
+      <b style="color:var(--gold-soft)">Beban individu: sedang–tinggi.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>3 · Premium financing resmi</summary>
+    <div class="faq-body">
+      Pembiayaan yang tujuannya eksplisit untuk premi instrumen bernilai besar, dengan instrumen itu
+      sendiri sebagai jaminan utama — properti tetap bebas untuk kredit project. Umum di Singapura/HK
+      untuk nasabah prioritas; di Indonesia tersedia terbatas lewat segmen private banking.
+      <b style="color:var(--gold-soft)">Beban individu: sedang.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>4 · Policy loan — pinjam dari nilai tunai sendiri</summary>
+    <div class="faq-body">
+      Setelah nilai tunai terbentuk, pemegang kontrak bisa meminjam hingga ±60–80% nilai tunai
+      langsung dari penerbit — tanpa agunan tambahan, tanpa BI checking. Bukan untuk pendanaan awal,
+      tapi jadi sumber likuiditas tahap lanjut (bridging ekspansi, kebutuhan mendesak).
+      <b style="color:var(--gold-soft)">Beban individu: rendah.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>5 · Nilai tunai sebagai agunan tambahan</summary>
+    <div class="faq-body">
+      Nilai tunai di-assign ke bank sebagai penguat agunan kredit project. Tidak semua bank menerima
+      dan nilainya dipotong (haircut), tapi ini cara paper asset benar-benar "bekerja" untuk pendanaan —
+      bukan sekadar mempercantik profil. Aset yang sudah ada dimanfaatkan ulang.
+      <b style="color:var(--gold-soft)">Beban individu: rendah.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>6 · Keyman via perusahaan (PT)</summary>
+    <div class="faq-body">
+      Perusahaan yang membeli instrumen atas figur kunci (founder/direktur); premi menjadi beban
+      perusahaan, dan kredit produktif diajukan atas nama PT dengan business plan. Individu hampir
+      tidak menanggung apa pun secara pribadi. Untuk project skala besar, struktur entitas ini
+      biasanya memang dibutuhkan — analis kredit lebih nyaman membaca PT daripada perorangan.
+      <b style="color:var(--gold-soft)">Beban individu: paling rendah.</b>
+    </div>
+  </details>
+
+  <details>
+    <summary>7 · Hybrid bank + investor dengan term terbatas</summary>
+    <div class="faq-body">
+      Sebagian project dibiayai kredit bank, sebagian oleh investor dengan skema terbatas —
+      revenue sharing dengan cap, atau convertible note — bukan bagi hasil permanen. Investor mendapat
+      return yang fair lalu selesai; kendali kembali penuh ke pemilik ide. Cicilan bank lebih ringan,
+      tapi perlu perjanjian yang dirancang rapi (notaris).
+      <b style="color:var(--gold-soft)">Beban individu: rendah–sedang.</b>
+    </div>
+  </details>
+
+  <div class="illu" style="margin-top:18px">
+    <div class="label">Pola kombinasi yang paling efisien</div>
+
+    <div class="flow">
+      <div class="fstage">
+        <div class="fnode">1</div>
+        <div class="fcard">
+          <div class="ftag">Model 2 / 3</div>
+          <h4>Bentuk paper asset</h4>
+          <p>Kredit multiguna atau premium financing → instrumen bernilai kontrak penuh aktif sejak awal.</p>
+        </div>
+      </div>
+      <div class="farrow">↓</div>
+      <div class="fstage">
+        <div class="fnode">2</div>
+        <div class="fcard">
+          <div class="ftag">Model 5</div>
+          <h4>Perkuat kredit tahap 1</h4>
+          <p>Nilai tunai jadi agunan tambahan / penguat profil → pendanaan project pertama cair.</p>
+        </div>
+      </div>
+      <div class="farrow">↓</div>
+      <div class="fstage">
+        <div class="fnode">3</div>
+        <div class="fcard">
+          <div class="ftag">Model 4</div>
+          <h4>Likuiditas tahap lanjut</h4>
+          <p>Nilai tunai tumbuh → policy loan untuk bridging ekspansi, tanpa agunan baru, tanpa BI checking.</p>
+        </div>
+      </div>
+      <div class="farrow">↓</div>
+      <div class="fstage">
+        <div class="fnode">4</div>
+        <div class="fcard">
+          <div class="ftag">Model 6</div>
+          <h4>Migrasi ke skala besar</h4>
+          <p>Project matang → struktur pindah ke PT (keyman), beban lepas dari individu sepenuhnya.</p>
+        </div>
+      </div>
+      <div class="farrow">↓</div>
+      <div class="fstage">
+        <div class="fnode gold">★</div>
+        <div class="fcard win">
+          <h4>1 paper asset, 3 fungsi</h4>
+          <p><b>Profil</b> di mata lembaga · <b>Agunan</b> penguat kredit · <b>Likuiditas</b> cadangan — dari satu kali pembentukan.</p>
+        </div>
+      </div>
+    </div>
+
     <p class="disc">
-      *Ilustrasi umum, bukan penawaran resmi maupun jaminan hasil. Angka aktual mengikuti
-      profil usia, skema, dan ilustrasi resmi dari penerbit instrumen. Detail lengkap dibahas saat konsultasi.
+      Rambu-rambu di semua model: jenis akad kredit harus sesuai penggunaan dananya, seluruh proses
+      lewat jalur resmi lembaga, dan pembentukan instrumen mengikuti ketentuan underwriting penerbit secara terbuka.
+      Struktur mana yang pas berbeda per profil — itu yang kita petakan saat diskusi.
     </p>
   </div>
 
-  <h2>Cocok untuk siapa</h2>
-  <ul class="who">
-    <li>Pengusaha yang ingin diversifikasi di luar properti & bisnis inti</li>
-    <li>Broker / rekan yang punya klien butuh struktur aset lebih rapi</li>
-    <li>Pemilik usaha yang sedang / akan mengajukan pendanaan</li>
-    <li>Yang ingin likuiditas cadangan tanpa mengganggu modal kerja</li>
-  </ul>
+  <h2>Prosesnya simpel</h2>
+  <div class="steps">
+    <div class="stepc">
+      <div class="num">1</div>
+      <h3>Diskusi 15 menit</h3>
+      <p>Via WhatsApp / call. Kita petakan kebutuhan: struktur aset, rencana pendanaan, dan kapasitas setoran. Tanpa kewajiban apa pun.</p>
+    </div>
+    <div class="stepc">
+      <div class="num">2</div>
+      <h3>Ilustrasi personal</h3>
+      <p>Saya siapkan simulasi angka resmi sesuai usia & profil Anda — hitam di atas putih, bisa dipelajari dulu dengan tenang.</p>
+    </div>
+    <div class="stepc">
+      <div class="num">3</div>
+      <h3>Aktivasi & pendampingan</h3>
+      <p>Kalau cocok, aktivasi bisa selesai dalam hitungan hari. Saya dampingi jangka panjang, termasuk saat klaim atau akses nilai tunai.</p>
+    </div>
+  </div>
+
+  <h2>Tanya jawab</h2>
+
+  <details>
+    <summary>Kok kesannya ribet — banyak model, banyak tahap?</summary>
+    <div class="faq-body">
+      Yang ribet itu dunia pendanaannya — memang begitu, dengan atau tanpa paper asset.
+      Justru instrumen ini yang menyederhanakan: dari sisi Anda hanya ada <b style="color:var(--ink)">satu kontrak
+      dan setoran terjadwal</b>. Selesai. Tujuh model di atas itu peta kerja saya, bukan PR Anda —
+      sama seperti Anda tidak perlu paham struktur kredit sindikasi untuk mengajukan KPR.
+      Bandingkan dengan alternatifnya: menyusun agunan tambahan dari properti (appraisal, notaris, pajak, berbulan-bulan)
+      atau nego ulang term investor setiap putaran. Satu diskusi 15 menit, saya tunjukkan versi sederhananya untuk kasus Anda.
+    </div>
+  </details>
+
+  <details>
+    <summary>Ini produk apa sebenarnya?</summary>
+    <div class="faq-body">
+      Instrumen kontraktual berbasis proteksi yang memiliki komponen nilai tunai — diterbitkan oleh lembaga keuangan berizin dan diawasi OJK. Jadi bukan obligasi, bukan saham, dan bukan skema investasi. Fungsinya di portofolio: memperkuat struktur aset sekaligus melindungi arus kas. Nama penerbit dan detail produk saya buka lengkap saat diskusi.
+    </div>
+  </details>
+
+  <details>
+    <summary>Bedanya dengan obligasi / SBN apa?</summary>
+    <div class="faq-body">
+      Obligasi/SBN butuh dana besar di depan dan perannya menghasilkan imbal hasil berkala. Instrumen ini kebalikannya: dibangun bertahap lewat setoran terjadwal, tapi nilai kontraknya aktif penuh sejak awal. Perannya bukan cari imbal hasil tertinggi — melainkan kepastian struktur aset dan perlindungan arus kas.
+    </div>
+  </details>
+
+  <details>
+    <summary>Nilai tunainya bisa diakses kapan?</summary>
+    <div class="faq-body">
+      Nilai tunai terbentuk bertahap sejak tahun-tahun awal dan bisa diakses sesuai skema kontrak — misalnya untuk kebutuhan likuiditas mendesak, tanpa harus menutup kontraknya. Aturan detail (kapan, berapa persen, konsekuensinya) berbeda per skema, dan itu yang kita hitung bareng di ilustrasi personal.
+    </div>
+  </details>
+
+  <details>
+    <summary>Apakah bisa mendukung pengajuan pendanaan?</summary>
+    <div class="faq-body">
+      Aset yang tercatat dan bernilai tunai memperkuat profil finansial saat lembaga menilai kelayakan — menunjukkan disiplin finansial dan diversifikasi. Untuk skema yang lebih spesifik (misalnya aset sebagai penunjang agunan), tergantung kebijakan masing-masing lembaga; saya juga punya jaringan lembaga pendanaan yang bisa dihubungkan sesuai kebutuhan.
+    </div>
+  </details>
+
+  <details>
+    <summary>Risikonya apa?</summary>
+    <div class="faq-body">
+      Dua yang utama: (1) komponen nilai tunai mengikuti kinerja instrumen penempatan dananya — angka di ilustrasi adalah proyeksi, bukan jaminan; (2) berhenti setor terlalu dini bisa membuat nilai tunai belum optimal. Karena itu penting menyesuaikan besaran setoran dengan kapasitas riil — itu bagian dari diskusi awal.
+    </div>
+  </details>
+
+  <details>
+    <summary>Minimal mulai dari berapa?</summary>
+    <div class="faq-body">
+      Fleksibel — skema bisa disusun dari kisaran Rp 1–2 jutaan per bulan sampai setoran tunggal (single) untuk yang ingin langsung membentuk aset besar. Angka pastinya menyesuaikan usia dan tujuan, dihitung di ilustrasi personal.
+    </div>
+  </details>
+
+  <details>
+    <summary>Saya broker — ada skema kerja sama?</summary>
+    <div class="faq-body">
+      Ada. Kalau Anda punya klien yang cocok dengan profil ini, kita bisa atur skema referral / kolaborasi yang fair dan transparan. Japri saja, kita bahas empat mata.
+    </div>
+  </details>
 
   <div class="cta">
-    <a class="btn btn-wa" href="https://wa.me/6281290947677?text=Halo%20Tifa%2C%20saya%20tertarik%20info%20paper%20asset%20untuk%20kenyamanan%20pendanaan.%20Boleh%20dijadwalkan%20diskusi%3F">
+    <a class="btn btn-wa" href="https://wa.me/6281262591127?text=Halo%20Milzon%2C%20saya%20tertarik%20info%20paper%20asset%20untuk%20kenyamanan%20pendanaan.%20Boleh%20dijadwalkan%20diskusi%3F">
       💬 Jadwalkan Diskusi 15 Menit
-    </a>
-    <a class="btn btn-ghost" href="https://milzon1010.github.io/eca-project/mulai.html">
-      Lihat konsep lengkapnya dulu
     </a>
   </div>
 
   <p class="sign">
-    <b>Tifa Mellina</b> · Financial Advisor & Funding Network<br>
-    @tifamelina168
+    <b>Milzon</b> · Financial Advisor & Funding Network<br>
+    @milzon.latief.fin
   </p>
 </div>
 </body>
